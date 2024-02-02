@@ -1,18 +1,18 @@
 # Toy RSA Algorithm Lab: Understanding Asymmetric Encryption
 
+## Prerequisites
+
+In order to run this lab, you will need access to a device running a Linux OS. This lab has been tested on Ubuntu 22.04.
+
+You will require the following tools to be installed:
+
+- [Golang](https://go.dev/doc/install)
+
 ## Introduction
 
 Welcome to the Toy RSA Algorithm Lab! In this hands-on exercise, you'll explore the principles of asymmetric encryption by implementing a simple or 'toy' RSA algorithm using Go. You'll learn how to encrypt, decrypt, sign, and verify messages, gaining a deeper understanding of cryptography.
 
 > Disclaimer - this code is to demonstrate the theory of RSA and should not be used in production. Golang has secure cryptographic libraries which can be imported and used for performing these operations. In addition, Elliptic curve algorithms are now considered more secure in practice for both key exchange and digital signatures (e.g. see this [Trail of Bits blog post](https://blog.trailofbits.com/2019/07/08/fuck-rsa/)). We are simply using RSA as an example to demonstrate the principles of asymmetric cryptography, given that the mathematical details are easier to understand!
-
-## Prerequisites
-
-In order to run these labs, you will need access to a device running a Linux OS. This lab has been tested on Ubuntu 22.04.
-
-You will require the following tools to be installed:
-
-- [Golang](https://go.dev/doc/install)
 
 ## Background
 
