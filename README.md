@@ -10,7 +10,7 @@ You will require the following tools to be installed:
 
 ## Introduction
 
-Welcome to the Toy RSA Algorithm Lab! In this hands-on exercise, you'll explore the principles of asymmetric encryption by implementing a simple or 'toy' RSA algorithm using Go. You'll learn how to encrypt, decrypt, sign, and verify messages, gaining a deeper understanding of cryptography.
+Welcome to the Toy RSA Algorithm Lab! In this hands-on exercise, you'll explore the principles of asymmetric encryption by implementing a simple or 'toy' [RSA](https://en.wikipedia.org/wiki/RSA_(cryptosystem)) algorithm using Go. You'll learn how to encrypt, decrypt, sign, and verify messages, gaining a deeper understanding of cryptography.
 
 > Disclaimer - this code is to demonstrate the theory of RSA and should not be used in production. Golang has secure cryptographic libraries which can be imported and used for performing these operations. In addition, Elliptic curve algorithms are now considered more secure in practice for both key exchange and digital signatures (e.g. see this [Trail of Bits blog post](https://blog.trailofbits.com/2019/07/08/fuck-rsa/)). We are simply using RSA as an example to demonstrate the principles of asymmetric cryptography, given that the mathematical details are easier to understand!
 
@@ -18,16 +18,16 @@ Welcome to the Toy RSA Algorithm Lab! In this hands-on exercise, you'll explore 
 
 Asymmetric encryption is achieved by algorithms which are easy to compute in one direction, but prohibitively difficult to compute in reverse. Algorithms achieve this through the creation of a key pair consisting of a public and private key. The public part can be safely shared with others, but the private part must be kept secret. Asymmetric algorithms can be used for:
 
-- Encryption: a person or process with access to a third party's public key can encrypt data, which can only be decrypted by an entity in possession of the corresponding private key;
-- Digital Signatures: any person or process with access to the private key can create a digital signature (using an appropriate hashing algorithm in combination with asymmetric cryptography), which can be verified by a process with access to the public key;
-- Key Exchange: two parties could use an algorithm such as the Diffie-Hellman key exchange scheme to agree on a shared secret by separately performing an offline computation involving their private key, and an authentic copy of the other party's private key.
+- **Encryption**: a person or process with access to a third party's public key can encrypt data, which can only be decrypted by an entity in possession of the corresponding private key;
+- **Digital Signatures**: any person or process with access to the private key can create a digital signature (using an appropriate hashing algorithm in combination with asymmetric cryptography), which can be verified by a process with access to the public key;
+- **Key Exchange**: two parties could use an algorithm such as the Diffie-Hellman key exchange scheme to agree on a shared secret by separately performing an offline computation involving their private key, and an authentic copy of the other party's private key.
 
 RSA is based on the principle that if we take two large, prime integers `p` and `q` and multiply them to form a 'modulus' `n`, the multiplication operation is computationally easy, but factoring `n` to recover `p` and `q` is computationally infeasible given the amount of computing power / time it would take. The modulus `n` is used by both the public and private keys and provides the link between them. The length of `n` in bits is the 'key length'.
 
 Along with the computation of `n`, the RSA algorithm requires the computation of the totient $t=(p-1)(q-1)$. We now have all the information we need to derive the public and private key:
 
-- The 'public exponent' `e` is chosen to be relatively prime to `t`. The public key is then made up of `n` and `e`
-- The 'private exponent' `d` is computed such that $de \mod t = 1$. `mod` stands for the modulo operation, which gives the remainder when two numbers are divided, e.g. $8 \mod 3 = 2$. The private key is then made up of `n` and `d`.
+- The '**public exponent**' `e` is chosen to be relatively prime to `t`. The public key is then made up of `n` and `e`
+- The '**private exponent**' `d` is computed such that $de \mod t = 1$. `mod` stands for the modulo operation, which gives the remainder when two numbers are divided, e.g. $8 \mod 3 = 2$. The private key is then made up of `n` and `d`.
 
 If Alice wants to send a secret integer `M` to Bob, she can encrypt the integer by performing the following operation using Bob's public key $(n,e)$: $C = M^e \mod n$. Bob can now decrypt the ciphertext `C` by computing $M = C^d \mod n$
 
