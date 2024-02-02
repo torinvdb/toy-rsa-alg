@@ -84,3 +84,7 @@ This lab provides rich in-line comments to help de-mystify cryptography, specifi
 This lab provides a hands-on introduction to the RSA algorithm and asymmetric encryption using Go. By working through the code and running the provided examples, you'll gain valuable insights into encryption, decryption, signing, and verification. The interactive user-input loop allows for experimentation with different messages and showcases the impact of even minor changes to the text.
 
 Feel free to experiment with different messages, prime numbers, or even extend the code with additional features. Happy coding!
+
+# Disclaimer
+
+This demo was written for [LFS183x](https://training.linuxfoundation.org/training/introduction-to-zero-trust-lfs183x/) under the provided [Apache License](LICENSE).
